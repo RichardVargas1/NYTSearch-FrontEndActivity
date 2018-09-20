@@ -5,7 +5,7 @@ queryUrl += '?' + $.param({
 
 
 
-getData();
+//getData();
 
 
     
