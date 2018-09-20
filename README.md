@@ -1,0 +1,2 @@
+# NYTSearch-FrontEndActivity
+Initial.
