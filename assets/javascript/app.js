@@ -1,25 +1,27 @@
+$(document).ready(function(){
 
-
-    
-        
-    function getData(){
-        var mySearch = $("#searchText").val();
-        var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-        queryUrl += '?' + $.param({
-            'api-key': "8335fc7b2a3545bcb71046bf50bee79e",
-            'q' : mySearch
-
-        });
-
+var mySearch = $("#searchText").val();
+var url  = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+var myResponse;
 
    $.ajax({
-        url: queryUrl,
-        method: "GET"
-    })
+        url: url,
+        method: 'GET'
+    }).then(function(response) {
+        
+        myResponse = response;
+        console.log(myResponse);
+
+    });
      
-        .then(function(response) {
-            var myResponse = (response.docs.snippet);
-            console.log(myResponse);
-        });
-     
-}
+    $(".search").click(function(){
+        getData();
+    });
+
+
+    function getData(){
+        mySearch 
+        queryUrl += '?' + $.param({'api-key': "267cf592692f45e68a43dbbf35e843a4",'q' : mySearch})
+    }   
+
+});
